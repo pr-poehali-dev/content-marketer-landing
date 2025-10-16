@@ -38,41 +38,40 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="главная" className="pt-32 pb-20 px-4">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-in">
-              <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
-                СПЕЦИАЛИСТ<br />ПО КОНТЕНТ-<br />МАРКЕТИНГУ
-              </h1>
-              <p className="text-xl text-muted-foreground font-light">
-                Создаю контент, который работает
-              </p>
-              <div className="flex gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-white rounded-full px-8"
-                  onClick={() => scrollToSection('услуги')}
-                >
-                  Услуги
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-2 border-foreground rounded-full px-8"
-                  onClick={() => scrollToSection('контакты')}
-                >
-                  Связаться
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="bg-gradient-to-br from-primary/30 to-accent/40 rounded-3xl p-12 backdrop-blur-sm">
-                <img 
-                  src="https://cdn.poehali.dev/files/9125b748-83d9-4dde-aab9-c1fbfcb125e2.jpg" 
-                  alt="Content Marketing" 
-                  className="w-full rounded-2xl"
-                />
+      <section id="главная" className="pt-24">
+        <div className="relative w-full h-[600px] overflow-hidden">
+          <img 
+            src="https://cdn.poehali.dev/files/9125b748-83d9-4dde-aab9-c1fbfcb125e2.jpg" 
+            alt="Content Marketing" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+          <div className="absolute inset-0 flex items-center">
+            <div className="container mx-auto px-4">
+              <div className="max-w-2xl space-y-6 text-white">
+                <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+                  СПЕЦИАЛИСТ<br />ПО КОНТЕНТ-<br />МАРКЕТИНГУ
+                </h1>
+                <p className="text-xl font-light">
+                  Создаю контент, который работает
+                </p>
+                <div className="flex gap-4">
+                  <Button 
+                    size="lg" 
+                    className="bg-primary hover:bg-primary/90 text-white rounded-full px-8"
+                    onClick={() => scrollToSection('услуги')}
+                  >
+                    Услуги
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="border-2 border-white text-white hover:bg-white hover:text-foreground rounded-full px-8"
+                    onClick={() => scrollToSection('контакты')}
+                  >
+                    Связаться
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
