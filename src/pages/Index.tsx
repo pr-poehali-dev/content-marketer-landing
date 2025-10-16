@@ -43,10 +43,10 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
               <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
-                CONTENT<br />MARKETING<br />SPECIALIST
+                СПЕЦИАЛИСТ<br />ПО КОНТЕНТ-<br />МАРКЕТИНГУ
               </h1>
               <p className="text-xl text-muted-foreground font-light">
-                Tycтent Marketing Specialist
+                Создаю контент, который работает
               </p>
               <div className="flex gap-4">
                 <Button 
@@ -54,7 +54,7 @@ const Index = () => {
                   className="bg-primary hover:bg-primary/90 text-white rounded-full px-8"
                   onClick={() => scrollToSection('услуги')}
                 >
-                  Горограря
+                  Услуги
                 </Button>
                 <Button 
                   size="lg" 
@@ -62,7 +62,7 @@ const Index = () => {
                   className="border-2 border-foreground rounded-full px-8"
                   onClick={() => scrollToSection('контакты')}
                 >
-                  Servic карt
+                  Связаться
                 </Button>
               </div>
             </div>
@@ -135,9 +135,9 @@ const Index = () => {
                 <h3 className="text-2xl font-bold text-foreground mb-8">Ключевые метрики эффективности</h3>
                 <div className="grid md:grid-cols-3 gap-8">
                   {[
-                    { label: 'Engagement Rate', value: '8.5%', trend: '+2.3%', color: 'bg-green-500' },
-                    { label: 'Content ROI', value: '340%', trend: '+45%', color: 'bg-blue-500' },
-                    { label: 'Conversion Rate', value: '4.2%', trend: '+1.8%', color: 'bg-primary' },
+                    { label: 'Вовлеченность', value: '8.5%', trend: '+2.3%', color: 'bg-green-500' },
+                    { label: 'ROI контента', value: '340%', trend: '+45%', color: 'bg-blue-500' },
+                    { label: 'Конверсия', value: '4.2%', trend: '+1.8%', color: 'bg-primary' },
                   ].map((metric, idx) => (
                     <div key={idx} className="space-y-3">
                       <div className="flex justify-between items-center">
