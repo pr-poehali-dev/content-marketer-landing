@@ -221,21 +221,29 @@ const Index = () => {
                 </Button>
               </form>
               <div className="mt-8 pt-8 border-t border-border">
-                <div className="flex justify-center space-x-6">
-                  {[
-                    { icon: 'Mail', label: 'Email' },
-                    { icon: 'Linkedin', label: 'LinkedIn' },
-                    { icon: 'Instagram', label: 'Instagram' },
-                    { icon: 'Send', label: 'Telegram' },
-                  ].map((social, idx) => (
-                    <button
-                      key={idx}
-                      className="flex flex-col items-center space-y-2 text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <Icon name={social.icon} size={24} />
-                      <span className="text-xs">{social.label}</span>
-                    </button>
-                  ))}
+                <div className="flex justify-center space-x-8">
+                  <a
+                    href="https://t.me/yourusername"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center space-y-2 text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Icon name="Send" size={28} />
+                    <span className="text-sm font-medium">Telegram</span>
+                  </a>
+                  <a
+                    href="https://vk.com/yourusername"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center space-y-2 text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <div className="w-7 h-7 flex items-center justify-center">
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7">
+                        <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.15 14.63c-.37.55-1.08.76-1.97.76-1.12 0-1.96-.41-2.66-1.03-.61-.54-1.21-.86-1.87-.86-.67 0-1.28.32-1.91.86-.7.62-1.54 1.03-2.66 1.03-.89 0-1.6-.21-1.97-.76-.41-.61-.25-1.43.41-2.59.45-.78.95-1.66.95-2.47 0-.81-.5-1.69-.95-2.47-.66-1.16-.82-1.98-.41-2.59.37-.55 1.08-.76 1.97-.76 1.12 0 1.96.41 2.66 1.03.63.54 1.24.86 1.91.86.66 0 1.26-.32 1.87-.86.7-.62 1.54-1.03 2.66-1.03.89 0 1.6.21 1.97.76.41.61.25 1.43-.41 2.59-.45.78-.95 1.66-.95 2.47 0 .81.5 1.69.95 2.47.66 1.16.82 1.98.41 2.59z"/>
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium">VK</span>
+                  </a>
                 </div>
               </div>
             </CardContent>
