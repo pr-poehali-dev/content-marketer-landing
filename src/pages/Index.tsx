@@ -115,6 +115,10 @@ const Index = () => {
           <div className="max-w-3xl mx-auto">
             <Card className="border-0 shadow-lg">
               <CardContent className="p-8">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">Киселева Анна</h3>
+                  <p className="text-xl text-primary font-medium">Специалист по контент-маркетингу</p>
+                </div>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   Специалист по контент-маркетингу с опытом создания стратегий, которые говорят на языке клиента.
                   Помогаю брендам находить свой голос и выстраивать доверительные отношения с аудиторией через качественный контент.
