@@ -199,8 +199,8 @@ const Index = () => {
       {/* Contact Section */}
       <section id="контакты" className="py-20 px-4">
         <div className="container mx-auto max-w-2xl">
-          <h2 className="text-4xl font-bold text-foreground mb-4 text-center">Контакты</h2>
-          <p className="text-center text-muted-foreground mb-12">Свяжитесь со мной для обсуждения проекта</p>
+          <h2 className="text-4xl font-bold text-foreground mb-4 text-center">Обсудить проект</h2>
+          <p className="text-center text-muted-foreground mb-12">Свяжитесь со мной для обсуждения вашего проекта</p>
           <Card className="border-0 shadow-xl bg-white">
             <CardContent className="p-8">
               <form className="space-y-6">
