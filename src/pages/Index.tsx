@@ -19,7 +19,7 @@ const Index = () => {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-border shadow-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold text-foreground">Cofessия</div>
+          <div className="text-2xl font-bold text-foreground">Конфессия</div>
           <div className="hidden md:flex space-x-8">
             {['Главная', 'Обо мне', 'Услуги', 'Блог', 'Контакты'].map((item) => (
               <button
@@ -228,10 +228,10 @@ const Index = () => {
                     rel="noopener noreferrer"
                     className="flex flex-col items-center space-y-3 group"
                   >
-                    <div className="w-14 h-14 rounded-xl bg-gray-200 group-hover:bg-[#229ED9] flex items-center justify-center transition-all duration-300">
+                    <div className="w-14 h-14 rounded-xl bg-gray-200 group-hover:bg-pink-500 flex items-center justify-center transition-all duration-300">
                       <Icon name="Send" size={32} className="text-gray-600 group-hover:text-white transition-colors duration-300" />
                     </div>
-                    <span className="text-sm font-medium text-muted-foreground group-hover:text-[#229ED9] transition-colors">Telegram</span>
+                    <span className="text-sm font-medium text-muted-foreground group-hover:text-pink-500 transition-colors">Telegram</span>
                   </a>
                   <a
                     href="https://vk.com/yourusername"
@@ -239,12 +239,12 @@ const Index = () => {
                     rel="noopener noreferrer"
                     className="flex flex-col items-center space-y-3 group"
                   >
-                    <div className="w-14 h-14 rounded-xl bg-gray-200 group-hover:bg-[#0077FF] flex items-center justify-center transition-all duration-300">
+                    <div className="w-14 h-14 rounded-xl bg-gray-200 group-hover:bg-pink-500 flex items-center justify-center transition-all duration-300">
                       <svg viewBox="0 0 48 48" fill="currentColor" className="w-8 h-8 text-gray-600 group-hover:text-white transition-colors duration-300">
                         <path d="M25.2,33.8c-7.2,0-11.3-4.9-11.5-13.1h3.6c0.1,6,2.8,8.5,4.9,9.1V20.7h3.4v5.3c2.1-0.2,4.3-2.6,5-5.3h3.4c-0.6,3.3-2.9,5.7-4.6,6.7c1.7,0.8,4.4,3,5.4,6.5h-3.7c-0.8-2.3-2.7-4.1-5.3-4.3v4.3H25.2z"/>
                       </svg>
                     </div>
-                    <span className="text-sm font-medium text-muted-foreground group-hover:text-[#0077FF] transition-colors">VK</span>
+                    <span className="text-sm font-medium text-muted-foreground group-hover:text-pink-500 transition-colors">VK</span>
                   </a>
                 </div>
               </div>
