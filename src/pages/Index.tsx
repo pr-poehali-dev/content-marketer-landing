@@ -7,11 +7,41 @@ import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error', message: string } | null>(null);
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/05d8d04e-a3af-4b03-917f-412aa40e044e', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({ type: 'success', message: 'Сообщение успешно отправлено!' });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitStatus({ type: 'error', message: data.error || 'Ошибка отправки' });
+      }
+    } catch (error) {
+      setSubmitStatus({ type: 'error', message: 'Ошибка соединения с сервером' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -203,21 +233,51 @@ const Index = () => {
           <p className="text-center text-muted-foreground mb-12">Свяжитесь со мной для обсуждения вашего проекта</p>
           <Card className="border-0 shadow-xl bg-white">
             <CardContent className="p-8">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">Имя</label>
-                  <Input placeholder="Ваше имя" className="border-border" />
+                  <Input 
+                    placeholder="Ваше имя" 
+                    className="border-border"
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    required
+                  />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">Email</label>
-                  <Input type="email" placeholder="your@email.com" className="border-border" />
+                  <Input 
+                    type="email" 
+                    placeholder="your@email.com" 
+                    className="border-border"
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    required
+                  />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">Сообщение</label>
-                  <Textarea placeholder="Расскажите о вашем проекте..." rows={5} className="border-border" />
+                  <Textarea 
+                    placeholder="Расскажите о вашем проекте..." 
+                    rows={5} 
+                    className="border-border"
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    required
+                  />
                 </div>
-                <Button className="w-full bg-primary hover:bg-primary/90 text-white" size="lg">
-                  Отправить сообщение
+                {submitStatus && (
+                  <div className={`p-4 rounded-lg ${submitStatus.type === 'success' ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>
+                    {submitStatus.message}
+                  </div>
+                )}
+                <Button 
+                  type="submit"
+                  className="w-full bg-primary hover:bg-primary/90 text-white" 
+                  size="lg"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Отправка...' : 'Отправить сообщение'}
                 </Button>
               </form>
               <div className="mt-8 pt-8 border-t border-border">
